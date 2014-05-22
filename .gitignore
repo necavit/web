@@ -1,0 +1,9 @@
+# **** **** **** **** **** **** **** **** #
+#      web repository gitignore file      #
+#                                         #
+# author: necavit                         #
+# **** **** **** **** **** **** **** **** #
+
+
+# Ghost blog engine directory
+ghost/*
