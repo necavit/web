@@ -16,10 +16,12 @@ function start(port, route, handle) {
       //extract the pathname of the request (after the domain and
       //  before the request query)
       var pathname = url.parse(request.url).pathname;
-      route(handle, pathname);
+      route(handle, pathname, request, response);
+      /*
       response.writeHead(200, {"Content-Type": "text/plain"});
       response.write("Hello World");
       response.end();
+      */
     }
     //server instance creation and initialization on port
     // received as a parameter

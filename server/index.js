@@ -12,6 +12,7 @@ var handlers = require("./js/handlers/handlers.js");
 
 var handle = {}
 handle["/"] = handlers.home;
+handle["notFound"] = handlers.notFound;
 
 //start server, listening on the port provided and
 // using the path router injected
