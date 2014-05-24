@@ -7,3 +7,10 @@
 
 # Ghost blog engine directory
 ghost/*
+
+# Any zipped or tarred file
+*.tar
+*.tgz
+*.gz
+*.zip
+*.tar.gz
