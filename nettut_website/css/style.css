@@ -1,0 +1,111 @@
+/*
+dark-gray-background: 808080ff
+dark-gray-text: e5e5e5ff
+clear-gray-background: fafafaff
+main-text: 1a1a1aff
+quote-background: e5e5e5ff
+quote-text: 4d4d4dff
+fa-icons-color: ccccccff
+blog-post-background: 00000080
+*/
+
+/******************************/
+/* ****      HTML5       **** */
+/******************************/
+header, footer, article, nav {
+  display: block;
+}
+
+/******************************/
+/* ****     GENERAL      **** */
+/******************************/
+body {
+  background: #fafafa;
+  font-family: "Segoe UI", Frutiger, 
+    "Frutiger Linotype", "Dejavu Sans", 
+    "Helvetica Neue", Arial, sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/******************************/
+/* ****    DARK BLOCK    **** */
+/******************************/
+.dark_block {
+  background: #808080;
+}
+
+/******************************/
+/* ****      HEADER      **** */
+/******************************/
+#header nav li {
+  display: inline;
+}
+
+/******************************/
+/* ****      BANNER      **** */
+/******************************/
+
+/******************************/
+/* ****      QUOTE       **** */
+/******************************/
+.quote_container {
+  background: #e5e5e5;
+}
+
+.quote_color {
+  color: #4d4d4d;
+}
+
+.quote_text {
+  font-size: xx-large;
+}
+
+/******************************/
+/* ****     CONTACT      **** */
+/******************************/
+#contact_bar_content li {
+  display: inline;
+}
+
+/******************************/
+/* ****       BLOG       **** */
+/******************************/
+.blog_container {
+  background-image: url(../img/blog_container_bg.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 300px;
+  max-height: 720px;
+}
+
+#blog_content {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#blog_content a {
+  color: #eaeaea;
+}
+
+.article_container {
+  background-color: rgba(0,0,0,0.5);
+  padding: 20px 30px 20px 30px;
+}
+
+/******************************/
+/* ****      FOOTER      **** */
+/******************************/
+
+/******************************/
+/* ****                  **** */
+/******************************/
+
+
