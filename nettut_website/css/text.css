@@ -9,7 +9,7 @@
 ----------------------------------------------------------------------------------------------------*/
 
 body {
-  font: 13px/1.5 "Helvetica Neue", Arial, "Liberation Sans", FreeSans, sans-serif;
+  font: 15px/1.5 "Helvetica Neue", Arial, "Liberation Sans", FreeSans, sans-serif;
 }
 
 pre,
@@ -28,27 +28,27 @@ hr {
 ----------------------------------------------------------------------------------------------------*/
 
 h1 {
-  font-size: 25px;
+  font-size: 27px;
 }
 
 h2 {
-  font-size: 23px;
+  font-size: 25px;
 }
 
 h3 {
-  font-size: 21px;
+  font-size: 23px;
 }
 
 h4 {
-  font-size: 19px;
+  font-size: 21px;
 }
 
 h5 {
-  font-size: 17px;
+  font-size: 19px;
 }
 
 h6 {
-  font-size: 15px;
+  font-size: 17px;
 }
 
 /* `Spacing
@@ -64,23 +64,4 @@ ul {
 
 li {
   margin-left: 30px;
-}
-
-p,
-dl,
-hr,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-ol,
-ul,
-pre,
-table,
-address,
-fieldset,
-figure {
-  margin-bottom: 20px;
 }
