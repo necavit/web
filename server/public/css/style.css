@@ -1,14 +1,3 @@
-/*
-dark-gray-background: 808080ff
-dark-gray-text: e5e5e5ff
-clear-gray-background: fafafaff
-main-text: 1a1a1aff
-quote-background: e5e5e5ff
-quote-text: 4d4d4dff
-fa-icons-color: ccccccff
-blog-post-background: 00000080
-*/
-
 /******************************/
 /* ****      HTML5       **** */
 /******************************/
@@ -33,9 +22,10 @@ body {
 a {
   text-decoration: none;
   color: black;
+  outline: 0;
 }
 
-a:hover {
+a:hover, a:active, a:focus {
   text-decoration: underline;
 }
 
@@ -69,15 +59,37 @@ li {
 /******************************/
 /* ****   CONSTRUCTION   **** */
 /******************************/
+#under_construction_container {
+  background: #e5e5e5;
+}
+
 .construction {
   background: url(../img/stripe_clear.png) repeat;
   border:1px solid #d6d92b;
   margin: 10px;
   padding: 10px 20px 10px 20px;
   font-family: Consolas, monaco, monospace;
-  text-align: center;
+  text-align: left;
   color: black;
   text-shadow: 0px 0px 5px white;
+  display: inline-block;
+}
+
+#under_construction_content {
+  display: inline;
+}
+
+.construction_button {
+  background: #f7e09e;
+  border:1px solid #cfb56d;
+  color: black;
+  float: right;
+  margin-top: 5px;
+}
+
+.construction_button:hover {
+  background: #F7CB9E;
+  cursor: pointer;
 }
 
 /******************************/
@@ -99,11 +111,25 @@ li {
 }
 
 /******************************/
+/* ****      RESUME      **** */
+/******************************/
+#resume {
+  padding: 20px 0px 20px 0px;
+  text-align: center;
+  color: #4d4d4d;
+  font-size: x-large;
+}
+
+/******************************/
 /* ****      BANNER      **** */
 /******************************/
+#banner_container {
+  clear: both;
+}
+
 #banner_chip {
   background: #e5e5e5;
-  margin: 20px 0px 20px 0px;
+  margin: 30px 0px 30px 0px;
   padding: 10px;
   overflow: hidden;
 }
@@ -120,16 +146,24 @@ li {
   padding: 10px 0px 10px 0px;
 }
 
+#banner_text a {
+  text-decoration: underline;
+}
+
+#banner_text p {
+  margin-bottom: 7px;
+}
+
 /******************************/
 /* ****      QUOTE       **** */
 /******************************/
-#quote_container {
+.light_gray_container {
   background: #e5e5e5;
   clear: both;
 }
 
 #quote {
-  padding: 10px;
+  padding: 30px 0px 30px 0px;
   text-align: center;
 }
 
