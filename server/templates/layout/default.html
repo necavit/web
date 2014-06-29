@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <!-- http://www.phpied.com/conditional-comments-block-downloads/ -->
+    <!--[if IE]><![endif]-->
+    
+    <!-- Ensure the page is rendered with the latest IE version -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- fav-icon -->
+    <!-- <link rel="shortcut icon" href="/favicon.ico" /> -->
+    
+    <!-- CSS stylesheets -->
+    <!-- 960 grid CSS framework -->
+    <link rel="stylesheet" type="text/css" href="css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="css/960_16_col.css" />
+    <link rel="stylesheet" type="text/css" href="css/960_12_col.css" />
+    <link rel="stylesheet" type="text/css" href="css/text.css" />
+    <!-- FontAwesome CSS framework -->
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+    <!-- custom CSS files -->
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    
+    <!-- Hand-held devices CSS -->
+    <!-- <link rel="stylesheet" media="handheld" href="css/handheld.css?v=1" /> -->
+    
+    <!-- IE HTML5 elements enabling -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <title>David Martínez</title>
+  </head>
+  <body>
+    {{> header }}
+    {{{ yield }}}
+    {{> footer }}
+    <!-- Put scripts at the bottom: https://developer.yahoo.com/performance/rules.html#js_bottom -->
+    <!-- minified jQuery -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+    <script>
+    $( document ).ready(function() {
+      $('#close_button').click(function() {
+        $('#under_construction_container').slideUp();
+      });
+    });
+    </script>
+  </body>
+</html>
