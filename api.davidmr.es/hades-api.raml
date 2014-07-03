@@ -1,0 +1,21 @@
+#%RAML 0.8
+
+title: Hades API
+baseUri: http://api.davidmr.es
+version: alpha
+schemas:
+  - User: !include ./json-schemas/user.json
+/users:
+  description: A collection of users.
+  get:
+  post:
+    description: Creates a new user given the request body information.
+    body:
+      application/json:
+        schema: User
+  /{userId}:
+    uriParameters:
+      userId:
+        type: string
+    get:
+      
