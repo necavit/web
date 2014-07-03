@@ -32,9 +32,15 @@
     <title>David Martínez</title>
   </head>
   <body>
+    <!-- Header template inclusion -->
     {{> header }}
+    
+    <!-- Body (content) template inclusion -->
     {{{ yield }}}
+    
+    <!-- Footer template inclusion -->
     {{> footer }}
+    
     <!-- Put scripts at the bottom: https://developer.yahoo.com/performance/rules.html#js_bottom -->
     <!-- minified jQuery -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>

@@ -1,3 +1,4 @@
 #!/bin/bash
 
-nodemon bin/www
+nodemon bin/davidmr_es
+
