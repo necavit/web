@@ -30,6 +30,50 @@ The final server creation is performed in the `bin/davidmr_es` file, which impor
 The one-line `start-nodemon` script, in the **scripts** folder, can be used to run the server in development environments.
 
 
-## Templates & public resources ##
+## Templates & Hogan view engine ##
 
+[hogan-express](https://github.com/vol4ok/hogan-express)) is a wrapper around [hogan.js](https://github.com/twitter/hogan.js) to enable it for Express.js applications. It uses the [Mustache](http://mustache.github.io/mustache.5.html) template engine to allow the server render more complex page layouts without the need to re-write whole sections of them.
 
+To enable the use of hogan-express in the app, it has to be added as a dependency in the `package.json` file and the following lines have to be added in the `app.js` configuration file:
+
+```javascript
+app.set('views', path.join(__dirname, 'templates'));
+app.engine('html', require('hogan-express'));
+app.set('view engine', 'html');
+```
+
+In this node.js app, there is a globally defined layout, which all pages share, found at `templates/layout/default.hmtl`. The `<head>` element for all the pages is defined there and a simple layout is used across all pages:
+
+```html
+...
+<body>
+  <!-- Header template inclusion -->
+  {{> header }}
+
+  <!-- Body (content) template inclusion -->
+  {{{ yield }}}
+
+  <!-- Footer template inclusion -->
+  {{> footer }}
+</body>
+...
+```
+
+This means that all pages will have a common header and a footer layout. The `{{{ yield }}}` tag is used by request handlers to render the concrete page body content.
+
+In order to have the header and footer templates available globally for all requests, the following lines are required in the `app.js` file:
+
+```javascript
+  //default partials (and layout) definition
+app.set('layout', 'layout/default'); //all views will be wrapped by this layout
+app.set('partials', {header: 'includes/header',
+                     footer: 'includes/footer'});
+```
+
+Then, to render the home page, for example, the request handler should be as follows:
+
+```javascript
+router.get('/', function(req, res) {
+  res.render('home', {});
+});
+```
