@@ -9,6 +9,9 @@ var bodyParser = require('body-parser');
 //create Express node.js app
 var app = express();
 
+//first things first: enable reverse proxied app support
+app.enable('trust proxy');
+
 //app middleware settings
   //favicon enabling
 app.use(favicon());
