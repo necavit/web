@@ -1,0 +1,23 @@
+{
+  "resultCode" : "success",
+  "updatedUser" : {
+    "statistics" : {
+      "killed" : 11,
+      "hidden" : 0
+      "level" : 11
+    },
+    "type" : "human"
+  }
+}
+
+{
+  "resultCode" : "failure",
+  "updatedUser" : {
+    "statistics" : {
+      "killed" : 10,
+      "hidden" : 0
+      "level" : 9
+    },
+    "type" : "infected"
+  }
+}
