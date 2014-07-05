@@ -1,14 +1,5 @@
-/* **** **** **** **** */
-/* author: necavit     */
-/* date: 24, May, 2014 */
-/* **** **** **** **** */
+# [blog.davidmr.es](blog.davidmr.es) Ghost Blog #
 
-- 'config.js' contains the configuration changes needed
-  to run the Ghost blogging engine on its corresponding
-  port and pointing to the right URLs and other stuff.
+This folder contains just the necessary `config.js` Ghost blogging engine configuration file and a folder named `articles` where blog articles (both finished ones and drafts) may be stored.
 
-- The 'articles' directory has a copy of the blog articles
-  that are (yet to be) published in the Ghost blogging
-  engine. It is useful to have them on the repo, in order
-  to redeploy them anywhere when needed (or even to deploy
-  them on any other blogging engine).
+The blog engine runs on the 2369 port and is connected to an SQLite database. No custom themes are applied at the time fo this writing.
