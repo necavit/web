@@ -5,6 +5,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
+var fs = require('fs');
 
 var app = express();
 
@@ -23,14 +24,23 @@ app.use(cookieParser());
 app.use('public', express.static(path.join(__dirname, 'public')));
 app.use('doc', express.static(path.join(__dirname, 'doc')));
 
+
 //mongodb connection
-mongoose.connect()
+mongoose.connect('mongodb://localhost:50505/hades');
+
+//mongodb schemas
+fs.readdirSync(__dirname + '/model').forEach(function(filename) {
+  if (~filename.indexOf('.js')) {
+    require(__dirname + '/model/' + filename);
+  }
+});
+
 
 //app routing
-var routes = require('./routes/index');
-app.use('/', routes);
-var users = require('./routes/users');
-app.use('/users', users);
+var index = require('./routes/index');
+app.use('/', index);
+var users = require('./routes/api/users');
+app.use('/api/users', users);
 
 /// catch 404 and forward to error handler
 app.use(function(req, res, next) {
