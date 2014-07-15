@@ -12,18 +12,17 @@ var app = express();
 //enable reverse proxy support
 app.enable('trust proxy');
 
-// view engine setup
-app.set('views', path.join(__dirname, 'templates'));
-app.engine('html', require('hogan-express'));
-app.set('view engine', 'html');
 
 app.use(favicon());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 app.use(cookieParser());
-app.use('public', express.static(path.join(__dirname, 'public')));
-app.use('doc', express.static(path.join(__dirname, 'doc')));
+app.use('/public', express.static(__dirname + '/public'));
 
+// view engine setup
+app.set('views', path.join(__dirname, 'templates'));
+app.engine('html', require('hogan-express'));
+app.set('view engine', 'html');
 
 //mongodb connection
 mongoose.connect('mongodb://localhost:50505/hades');
@@ -39,6 +38,8 @@ fs.readdirSync(__dirname + '/model').forEach(function(filename) {
 //app routing
 var index = require('./routes/index');
 app.use('/', index);
+var documentation = require('./routes/doc');
+app.use('/doc', documentation);
 var users = require('./routes/api/users');
 app.use('/api/users', users);
 
