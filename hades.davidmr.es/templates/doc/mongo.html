@@ -1,0 +1,63 @@
+<div class="page">
+    <div class="previewPage">
+    <div id="readme" class="announce md">
+      <article class="markdown-body entry-content">
+        <h1>
+<a name="user-content-mongodb" class="anchor" href="#mongodb" aria-hidden="true"><span class="octicon octicon-link"></span></a>mongodb</h1>
+
+<p>The <a href="http://www.mongodb.org/">mongod</a> database to which the Hades API connectis must be running on a localhost interface, listening to port 50505.</p>
+
+<p>To achieve this configuration, if we installed the mongodb system under Linux/Ubuntu through the OS package manager, we will have to modify the mongodb configuration file, located at <code>/etc/mongodb.conf</code>. There is a commented line there which we will uncomment and set to <code>port = 50505</code>.</p>
+
+<p>Once we have done this, we can manage the mongodb service using the appropriate service calls (see section on mongodb management).</p>
+
+<h2>
+<a name="user-content-hades-and-mongodb" class="anchor" href="#hades-and-mongodb" aria-hidden="true"><span class="octicon octicon-link"></span></a>Hades and mongodb</h2>
+
+<p>The API connects to the locally running mongodb service using the <code>mongoose</code> library. In just a single line, a connection can be achieved:</p>
+
+<div class="highlight highlight-javascript"><pre><span class="kd">var</span> <span class="nx">mongoose</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'mongoose'</span><span class="p">);</span>
+<span class="p">...</span>
+<span class="nx">mongoose</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span><span class="s1">'mongodb://localhost:50505/hades'</span><span class="p">);</span>
+</pre></div>
+
+<h3>
+<a name="user-content-schema" class="anchor" href="#schema" aria-hidden="true"><span class="octicon octicon-link"></span></a>Schema</h3>
+
+<p>Hades API has the schema definitions for the objects that will be stored under the <code>model</code> folder. All files there are required on bootstrap, by doing:</p>
+
+<div class="highlight highlight-javascript"><pre><span class="kd">var</span> <span class="nx">fs</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'fs'</span><span class="p">);</span>
+<span class="p">...</span>
+<span class="nx">fs</span><span class="p">.</span><span class="nx">readdirSync</span><span class="p">(</span><span class="nx">__dirname</span> <span class="o">+</span> <span class="s1">'/models'</span><span class="p">).</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">filename</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="o">~</span><span class="nx">filename</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s1">'.js'</span><span class="p">))</span> <span class="p">{</span>
+    <span class="nx">require</span><span class="p">(</span><span class="nx">__dirname</span> <span class="o">+</span> <span class="s1">'/models/'</span> <span class="o">+</span> <span class="nx">filename</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+
+<p>A schema definition file for a mongodb <em>users</em> collection would look like:</p>
+
+<div class="highlight highlight-javascript"><pre><span class="kd">var</span> <span class="nx">mongoose</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'mongoose'</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">Schema</span> <span class="o">=</span> <span class="nx">mongoose</span><span class="p">.</span><span class="nx">Schema</span><span class="p">;</span>
+
+<span class="kd">var</span> <span class="nx">usersSchema</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Schema</span><span class="p">({</span>
+  <span class="nx">username</span><span class="o">:</span> <span class="nb">String</span><span class="p">,</span>
+  <span class="nx">password</span><span class="o">:</span> <span class="nb">String</span>
+<span class="p">});</span>
+
+<span class="nx">mongoose</span><span class="p">.</span><span class="nx">model</span><span class="p">(</span><span class="s1">'users'</span><span class="p">,</span> <span class="nx">usersSchema</span><span class="p">);</span>
+</pre></div>
+
+<p>And should be named <code>users.js</code>, in order to load it up during application bootstrap.</p>
+
+<h2>
+<a name="user-content-mongodb-administration" class="anchor" href="#mongodb-administration" aria-hidden="true"><span class="octicon octicon-link"></span></a>mongodb administration</h2>
+
+<h3>
+<a name="user-content-todo" class="anchor" href="#todo" aria-hidden="true"><span class="octicon octicon-link"></span></a>TODO</h3>
+      </article>
+    </div>
+  </div>
+
+  <div>&nbsp;</div>
+  </div>

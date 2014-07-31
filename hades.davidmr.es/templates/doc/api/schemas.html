@@ -1,0 +1,58 @@
+
+  <div class="page">
+    <div class="previewPage">
+    <div id="readme" class="announce md">
+      <article class="markdown-body entry-content">
+        <h1>
+<a name="user-content-hades-api-json-schemas" class="anchor" href="#hades-api-json-schemas" aria-hidden="true"><span class="octicon octicon-link"></span></a>Hades API JSON Schemas</h1>
+
+<p>All schemas defined here conform to the <a href="http://json-schema.org/">JSONSchema specification</a>.</p>
+
+<h2>
+<a name="user-content-user" class="anchor" href="#user" aria-hidden="true"><span class="octicon octicon-link"></span></a>User</h2>
+
+<div class="highlight highlight-javascript"><pre><span class="p">{</span>
+  <span class="s2">"$schema"</span><span class="o">:</span> <span class="s2">"http://json-schema.org/draft-03/schema"</span><span class="p">,</span>
+  <span class="s2">"type"</span><span class="o">:</span> <span class="s2">"object"</span><span class="p">,</span>
+  <span class="s2">"required"</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="s2">"properties"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"displayName"</span><span class="o">:</span> <span class="p">{</span>
+      <span class="s2">"type"</span><span class="o">:</span> <span class="s2">"string"</span><span class="p">,</span>
+      <span class="s2">"required"</span><span class="o">:</span> <span class="kc">true</span>
+    <span class="p">},</span>
+    <span class="s2">"lastPosition"</span><span class="o">:</span> <span class="p">{</span>
+      <span class="s2">"type"</span><span class="o">:</span> <span class="s2">"object"</span><span class="p">,</span>
+      <span class="s2">"required"</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="s2">"properties"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"coordinates"</span><span class="o">:</span> <span class="p">{</span>
+          <span class="s2">"type"</span><span class="o">:</span> <span class="s2">"array"</span><span class="p">,</span>
+          <span class="s2">"required"</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+          <span class="s2">"items"</span><span class="o">:</span> <span class="p">{</span>
+            <span class="s2">"type"</span><span class="o">:</span> <span class="s2">"number"</span><span class="p">,</span>
+            <span class="s2">"required"</span><span class="o">:</span> <span class="kc">true</span>
+          <span class="p">}</span>
+        <span class="p">},</span>
+        <span class="s2">"type"</span><span class="o">:</span> <span class="p">{</span>
+          <span class="s2">"type"</span><span class="o">:</span> <span class="s2">"string"</span><span class="p">,</span>
+          <span class="s2">"required"</span><span class="o">:</span> <span class="kc">true</span>
+        <span class="p">}</span>
+      <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="s2">"mail"</span><span class="o">:</span> <span class="p">{</span>
+      <span class="s2">"type"</span><span class="o">:</span> <span class="s2">"string"</span><span class="p">,</span>
+      <span class="s2">"required"</span><span class="o">:</span> <span class="kc">true</span>
+    <span class="p">},</span>
+    <span class="s2">"type"</span><span class="o">:</span> <span class="p">{</span>
+      <span class="s2">"type"</span><span class="o">:</span> <span class="s2">"string"</span><span class="p">,</span>
+      <span class="s2">"required"</span><span class="o">:</span> <span class="kc">true</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+</pre></div>
+      </article>
+    </div>
+  </div>
+
+  <div>&nbsp;</div>
+</div>

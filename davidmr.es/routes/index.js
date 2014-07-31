@@ -12,7 +12,7 @@ router.get('/', function(req, res) {
 router.route('/blog')
 .all(function(req, res) {
   res.redirect('http://blog.davidmr.es');
-})
+});
 
 
 /* Any non-matching route redirects the user to the
@@ -22,6 +22,6 @@ router.route('/blog')
 router.route('*')
 .all(function(req, res) {
   res.render('home', {});
-})
+});
 
 module.exports = router;
