@@ -80,14 +80,22 @@ Keep reading to understand some of those other tiny boxes!
 
 ## node.js ##
 
-I had not much previous experience in building neither static web pages nor complex, dynamic web servers (in the sense of a web application). I had been working for some time on an Apache Tomcat server, but I definitely did not want such a heavy system for my *really* simple project: building a personal page and, most of all, learn web-related technologies.
+I had no previous experience in building neither static web pages nor complex, dynamic web servers (in the sense of a web application). I had been working for some time on an Apache Tomcat server, but I definitely did not want such a heavy system for my simple project: building a personal page and, most of all, learn web-related technologies.
 
-I decided to give [node.js](http://nodejs.org/) a try, for different reasons. Mainly, because everyone talks about it nowadays, but also because learning JavaScript was one of my current goals. Moreover, node.js is an event-driven web server, so a more *functional* approach is taken when developing node.js apps (it is not imperative programming).
+I decided to give [node.js](http://nodejs.org/) a try, for different reasons. Mainly, because everyone talks about it nowadays, but also because learning JavaScript was one of my current goals.
 
-The [davidmr.es](http://davidmr.es) page is a node.js web app. Even though it is simple and some could argue that a static HTML file could work as well, it is built using the [express.js](http://expressjs.com/) framework, which exposes a simple, yet powerful set of APIs to ease the node.js application development. *Routes*, *middleware* and *view engine* are some of the words I got used to after crafting the site. And, talking of view engines, I opted for [hogan-express](https://www.npmjs.org/package/hogan-express) to render my templates and organize the page layouts. It works with the logic-less [mustache](http://mustache.github.io/mustache.5.html) template language, and supports *partials*, which are very handy if I am to add some more pages to the site.
+The [davidmr.es](http://davidmr.es) page is a node.js web app. It is built using the [express.js](http://expressjs.com/) framework, which exposes a simple, yet powerful set of APIs to ease the node.js application development. *Routes*, *middleware* and *view engine* are some of the words I got used to after crafting the site. I opted for the [hogan-express](https://www.npmjs.org/package/hogan-express) view engine to render my templates and organize the page layouts. It works with the logic-less [mustache](http://mustache.github.io/mustache.5.html) template language and supports *partials*, which will be very handy if I am to add some more pages to the site.
 
 ## Ghost ##
 
-Finally, this blog, under the *blog.davidmr.es* domain, is run using the [Ghost](https://ghost.org/) blog engine, which is completely [ free and open source](https://ghost.org/pricing/), if you decide to host your own engine. It is also built on top of node.js and express.js, so posed to be a better alternative to a Wordpress blog, which is built with PHP, a language that I completely ignore. This way, if I ever want to hack anything from the Ghost core, it will be easier for me.
+Finally, this blog, under the *blog.davidmr.es* domain, is run using the [Ghost](https://ghost.org/) blog engine, which is completely [free and open source](https://ghost.org/pricing/), if you decide to host your own engine. It is also built on top of node.js and express.js, so it posed to be a better alternative than a Wordpress blog, which is built with PHP. This way, if I ever want to hack anything from the Ghost core, it will be easier.
 
-I have only made theme customisation for the Ghost engine so far, but it was quite easy to do. The [docs about it](http://docs.ghost.org/themes/#create-your-own) are pretty straightforward to understand and, moreover, my current theme design is forked from [Phantom](https://github.com/haydenbleasel/phantom), by [Hayden Bleasel](https://github.com/haydenbleasel), so I didn't have to start from scratch. I named the forked theme [phantom-necavit](https://github.com/necavit/phantom-necavit) and is opensourced and publicly available on GitHub.
+I also made a theme customisation for the Ghost engine, which was quite easy to do. The [docs about it](http://docs.ghost.org/themes/#create-your-own) are pretty straightforward to understand and, moreover, my current theme design is forked from [Phantom](https://github.com/haydenbleasel/phantom), by [Hayden Bleasel](https://github.com/haydenbleasel), so I didn't have to start from scratch. I named the forked theme [phantom-necavit](https://github.com/necavit/phantom-necavit) and is opensourced and publicly available on GitHub.
+
+I intend to add some more features in the near future and I am also waiting for the next Ghost core release, to see what the Ghost team has built!
+
+## That's it! ##
+
+I thought I would write some more about node.js development, but this article was growing too fast and decided to leave that for another post. If you have any questions about anything I have (simply) covered here, do not hesitate to send me a tweet or leave a comment on the LinkedIn page!
+
+Have a great time and enjoy the rest of this cold summer!
