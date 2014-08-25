@@ -6,17 +6,21 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var fs = require('fs');
+var session = require('express-session')
 
+//app creation
 var app = express();
 
-//enable reverse proxy support
+//enable reverse proxy support (nginx)
 app.enable('trust proxy');
 
-
+//enable some modules
 app.use(favicon());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 app.use(cookieParser());
+
+//all requests for '/public/*' are statically served
 app.use('/public', express.static(__dirname + '/public'));
 
 // view engine setup
@@ -34,6 +38,16 @@ fs.readdirSync(__dirname + '/model').forEach(function(filename) {
   }
 });
 
+//session enabling
+app.use(session({
+  name: 'hades.session',
+  secret: 'hades summercat',
+  saveUninitialized: true,
+  resave: true
+}));
+
+//app authentication filters
+
 
 //app routing
 var index = require('./routes/index');
@@ -43,7 +57,7 @@ app.use('/doc', documentation);
 var users = require('./routes/api/users');
 app.use('/api/users', users);
 
-/// catch 404 and forward to error handler
+// catch 404 and forward to error handler
 app.use(function(req, res, next) {
     var err = new Error('Not Found');
     err.status = 404;

@@ -1,9 +1,9 @@
 {
-  "name": "api.davidmr.es",
+  "name": "hades.davidmr.es",
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "npm start ./bin/hades_davidmr_es"
   },
   "dependencies": {
     "body-parser": "~1.0.0",
@@ -13,6 +13,7 @@
     "hogan-express": "*",
     "mongoose": "^3.8.12",
     "morgan": "~1.0.0",
-    "static-favicon": "~1.0.0"
+    "static-favicon": "~1.0.0",
+    "express-session": "1.7.6"
   }
 }

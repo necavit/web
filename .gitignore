@@ -8,11 +8,12 @@
 # Ghost blog engine directory
 ghost/*
 
+# design directory
+design/*
+
 # Any zipped or tarred file
 *.tar
 *.tgz
 *.gz
 *.zip
 *.tar.gz
-# design directory
-design/*

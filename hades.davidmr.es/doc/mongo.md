@@ -1,6 +1,6 @@
 # mongodb #
 
-The [mongod](http://www.mongodb.org/) database to which the Hades API connectis must be running on a localhost interface, listening to port 50505.
+The [mongodb](http://www.mongodb.org/) database to which the Hades API connects must be running on a localhost interface, listening to port 50505.
 
 To achieve this configuration, if we installed the mongodb system under Linux/Ubuntu through the OS package manager, we will have to modify the mongodb configuration file, located at `/etc/mongodb.conf`. There is a commented line there which we will uncomment and set to `port = 50505`.
 

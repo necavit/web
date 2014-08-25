@@ -51,7 +51,7 @@ To solve these drawbacks, we must manually stripe the body contents and make the
 
 #### RAML to HTML ####
 
-In order to use the [raml2html](https://github.com/kevinrenskers/raml2html) tool, we must firs install it:
+In order to use the [raml2html](https://github.com/kevinrenskers/raml2html) tool, we must first install it:
 
 ```bash
 npm install -g raml2html
