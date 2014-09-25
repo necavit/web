@@ -4,6 +4,8 @@ There is a lot of tutorials, blog posts and documentation on this subject on the
 
 **Disclaimer!** This tutorial is not intended for Android beginners, but to people who already know the basics, like populating a `ListView` with a backing `Adapter`. If you do now know what am I talking about, it will be hard to read.
 
+[IMAGE BE HERE - ANDROID NETWORK THING - SOURCE: http://solvedtech.blogspot.com.es/2013/11/android-wi-fi-error-wi-fi-not-turning-on.html]
+
 ## Volley ##
 
 Since I began thinking of writing this article, long before I even had started the blog, Google has released a [tutorial](http://developer.android.com/training/volley/index.html) about the Volley library, which is really well explained to get the basics working. You can take a look at it - I'll try to extend some things they tell you here.
@@ -35,7 +37,7 @@ This library is still under development, at the time of this writing, though as 
 git clone https://android.googlesource.com/platform/frameworks/volley .
 ```
 
-Do not forget that `.` at the end! It will download the last stable release of the library on the current directory. Next, we have to import it into our app project.
+Do not forget that `.` at the end! It will download the last stable release of the library on the *current directory*. Next, we have to import it into our app project.
 
 #### Importing Volley ####
 
@@ -51,13 +53,15 @@ Once you have "linked" the Volley library to the project, it's time to get your 
 
 ## The REST service ##
 
-Before we start coding the app, we will think of a REST service that our example app will be using. Do not hesitate to change it for the one you need or for some you can have access to - it's are just meant to be an example.
+Before we start coding the app, we will think of a REST service that our example app will be using. Do not hesitate to change it for the one you need or for some you can have access to - it's just meant to be an example.
 
 Today's service will be about... zombies! Yeah, zombies! ... It's just a joke we came up with one day at a brainstorming session - to build a zombie social network. This way, the undead could at last communicate with other communities of their folk around the globe. Now, really, it's just a simple social network, only this way is not so boring to implement!
 
 This new platform, that we will call Zocial, has all a zombie could desire: profile images, a social activity stream (somehow like Twitter... that's suspicious) and a way to comment and like those small posts. Also, authentication is needed to access these services, in order to block anyone who wanted to sneak in without being invited. Given the low amount of zombies in the planet, there is no need to follow anyone to get their activities on your stream; instead, all activities are posted to a global stream, making it waay easier to design and implement Zocial!
 
 ## Hands on! ##
+
+You can find all the code of this tutorial on its corresponding repository, which you can [fork at GitHub!](https://github.com/necavit/zocial-volley-tutorial) The project there is better documented that the snippets displayed here - if you want to get things clearer, go have a look!.
 
 ### Volley's request queue ###
 
@@ -74,6 +78,94 @@ Request request = /* ... */
 queue.add(request);
 ```
 
-[INSERT IMAGE HERE - REQUEST QUEUE ARCHITECTURE]
+It is best practice, though, to build your own *request queue manager*, because you won't typically need more than one `RequestQueue` at the same time. Thus, you can create a [singleton](http://en.wikipedia.org/wiki/Singleton_pattern) to be the manager of the queue:
 
-It is best practice to build your own request queue manager, because you only 
+```java
+public class RequestQueueManager {
+  //the request queue
+  private RequestQueue queue;
+  //the singleton instance
+  private static RequestQueueManager instance = null;
+
+  //private constructor
+  private RequestQueueManager(Context context) {
+    queue = Volley.newRequestQueue(context);
+  }
+
+  //public singleton access
+  public static RequestQueueManager getInstance(Context context) {
+    if (instance == null) {
+      instance = new RequestQueueManager(context);
+    }
+    return instance;
+  }
+
+  //queues a request to be executed
+  public <T> void addRequest(Request<T> request) {
+    queue.add(request);
+  }
+
+  //cancels all requests whose tag matches with the given one
+  public void cancelRequestsForTag(Object tag) {
+    queue.cancelAll(tag);
+  }
+}
+```
+
+Yes, it is *this simple* to get a Volley `RequestQueue` configured and provide "protected" access to it. *"But, what is a `Request`?"* We'll see it in a second.
+
+### Launching requests basics ###
+
+Volley's requests are generic, extensible HTTP requests that we can ask the `RequestQueue` to execute. A request takes a URL, an HTTP method and a couple of listener interfaces: a `Response.Listener<T>` and a `Response.ErrorListener`.
+
+Imagine that Zocial has an endpoint which can give us a zombie's display name as a raw string; something like:
+
+```
+GET /profiles/{username}/displayName
+  Retrieves a user's displayName as a raw string
+```
+
+*(Such a service will be useless, once we get to JSON requests)*. Issuing a request for that service in one of our app's activities can be as easy as:
+
+```java
+public class ZocialActivity extends Activity {
+    //...
+
+    private final String BASE_URL = "http://zocial.example.com";
+
+    private String getUsername() {
+      return "foo_zombie";
+    }
+
+    private showDisplayName() {
+      final TextView displayNameTextView = (TextView) findViewById(R.id.displayName);
+
+      String url = BASE_URL + "/profiles/" + getUsername() + "/displayName";
+
+      StringRequest request = new StringRequest(Method.GET, "url", new Response.Listener<String>() {
+			@Override
+			public void onResponse(String response) {
+				displayNameTextView.setText(response);
+			}
+  		}, new Response.ErrorListener() {
+  			@Override
+  			public void onErrorResponse(VolleyError error) {
+  				displayNameTextView.setText("Something went wrong");
+  			}
+  		});
+
+    }
+
+    //...
+}
+```
+
+No `AsyncTask` is used, no thread handling is needed. When the request is finished, the `Listener.onResponse()` [callback](http://en.wikipedia.org/wiki/Callback_%28computer_programming%29) provides us with the result, if was successful and, if not, the `ErrorListener.onErrorResponse()` callback is executed. This way, all activities, or fragments or whatever is issuing the networks requests, has to do is defining those callbacks and **that is it**. Of course, URLs and methods have to be taken care of, but let's give this another turn.
+
+### Structuring the REST client ###
+
+Letting UI-related objects know about HTTP methods and API endpoint URLs is *ugly*, even if a particular network operation is only called once throughout the app. Don't do it! We will now design and implement the app architecture, concerning network calls.
+
+After some time working on it, I came across a solution that, surely, is not perfect, but I find it to suit my needs. Firstly, a single *interface* is exposed to UI classes, in order to reduce complexity at that level. This interface with the "REST component" is the `ZocialAPIClient` class.
+
+[IMAGE BE HERE - REQUEST QUEUE ARCHITECTURE]
