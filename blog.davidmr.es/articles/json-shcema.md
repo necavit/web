@@ -1,26 +1,26 @@
-Almost every web and mobile developer has to deal, at some point, with sending or receiving JSON formatted data. But there are some things we are not doing well: we are not validating these data and we are developing software based on badly documented services, which ends up being uncomfortable and, sometimes, painful. JSON Schema can help us address both these situations.
+Almost every web and mobile developer has to deal, at some point, with sending or receiving JSON formatted data. But there are some things we are not doing well: we are not validating this structured data and we are developing software based on badly documented services, which ends up being uncomfortable and, sometimes, painful. **JSON Schema** can help us address both these situations.
 
 ## JSON hard times  ##
 
-Quite usually, in web and mobile development we developers end up using the [JSON](http://json.org) format as a means to exchange *structured* data between our systems and devices, because there are good reasons to do so: it is really widespread and very easy to integrate - libraries exist in most of the programming languages you can think of; it is more human readable than, say, XML; it is concise and, for many common purposes, its *expressive power* is sufficient.
+Quite usually in web and mobile development, we end up using the [JSON](http://json.org) format as a means to exchange *structured* data between our systems and devices, because there are many good reasons to do so: it is widespread and very easy to integrate - libraries to handle it exist in most of the programming languages you can think of; it is more human readable than, say, XML; it is concise and, for many common purposes, its "expressive power" is sufficient.
 
-However, when we are, for example, developing a mobile app that fetches data from a third party service, we often have some hard times with handling communication between the parties. More often than not, RESTful APIs are poorly documented: all we have available are some URLs and some request or response JSON *examples*. We find ourselves uncomfortably coding the API client, because we are uncertain what exactly is expected to be received or sent: "What is this attribute type?", "Is this field supposed to be required?", "Are these examples up-to-date?"... These unresolved questions and doubts can lead to errors and a certain loss of precious development time.
+However, when we are, for example, developing a mobile app that fetches data from a server, we sometimes have some hard times trying to achieve communication between the parties. More often than not, RESTful APIs are poorly documented: all we have available are some URLs and some request or response JSON *examples*. We find ourselves uncomfortably coding the API client, because we are uncertain of what exactly is expected to be received or sent: *"What is this attribute type?"*, *"Is this field supposed to be required?"*, *"Are these examples up-to-date?"*... These unresolved questions and doubts lead to coding errors and a certain loss of precious development time.
 
-So, what is the problem here? The answer is simple: the lack of a *data model*. It happens that the JSON format is not the problem at all: we need a tool that helps us answering any doubt we have about the structure of our requests and the service responses. And that tool is the **JSON Schema**.
+So, what is the problem here? The answer is simple: the lack of a *data model*. It happens, though, that the JSON notation is not the problem at all. What we need is a tool that helps us answering any doubts we have about the structure of our requests and the service responses; that tool is the **JSON Schema** specification.
 
 ## JSON Schema ##
 
-What exactly is the JSON Schema? Taken from its very own specification draft:
+What exactly is a "JSON Schema"? Quoting its very own [specification draft](http://json-schema.org/documentation.html):
 
 > JSON Schema provides a contract for what JSON data is required for a given application and how to interact with it. JSON Schema is intended to define validation, documentation, hyperlink navigation, and interaction control of JSON data.
 
-And, the most important thing to me: it is still an easily understandable schema format - it is still written in JSON!
+... and the most important thing for me: it is still an easily understandable schema format, because it's just JSON again!
 
 ### A quick look into it ###
 
-You are, of course, encouraged to read the formal specification draft... But a simple example will illustrate its uses and perhaps will arise your curiosity a bit more! There are some links provided at the end of this article, with tutorials, blog posts and reviews on the matter - take a look at them if you wish!
+You are, of course, encouraged to read the formal specification draft, but a simple example will illustrate its uses and perhaps will arise your curiosity a bit more. There are some links provided at the end of this article, with tutorials, blog posts and reviews on the matter - take a look at them if you wish!
 
-Let's say you are building a client for a social network platform. Imagine that it exposes a service to access a list of basic user's information (for example, the list of a user's friends) and that the JSON server answer example looks like this:
+Let's say you are building a client for a social network platform. Imagine that it exposes a service to access a list of basic user's information (for example, the list of a user's friends) and that the JSON server response example looks like this:
 
 ```json
 [
@@ -34,7 +34,7 @@ Let's say you are building a client for a social network platform. Imagine that 
 ]
 ```
 
-You might well think that this example is wrong, because Bob does not have an email address! But, what if this attribute is not always filled? Or what if Bob decided he did not want his email address be publicly available? Is the API documentation misleading or is it inteded to be this way? Let's have a look at the following JSON Schema:
+You might well think that this example is wrong, because *"Bob does not have an email address!"*. But, what if this attribute is not always filled? Or what if Bob decided he did not want his email address be publicly available? Is the API documentation misleading or is it intended to be this way? Let's have a look at the following corresponding JSON Schema:
 
 ```json
 {
@@ -59,7 +59,7 @@ You might well think that this example is wrong, because Bob does not have an em
 }
 ```
 
-This short and simple schema is telling us that the array items are JSON objects with properties: `username` and `email_address`. Seeing that the only required attribute is the `username` field, our question is now answered. Moreover, we get to know that email addresses are formatted accordingly (they are not just usernames of an unknown domain, for example) and that usernames are never empty: their mininmum length is 1. Both properties are of type `string`, so no ambiguity is left to this particular service answer.
+This short and simple schema is telling us that the array items are *JSON objects* with the following properties: `username` and `email_address`. Seeing that the only *required* attribute is the `username` field, our previous question is now answered. Moreover, we get to know that email addresses are [formatted accordingly](http://json-schema.org/latest/json-schema-validation.html) (they are not just usernames of an unknown domain, for example) and that usernames are never empty: their *mininmum length* is 1. Both properties are of type `string`, so no ambiguity is left to this particular service answer.
 
 ## Tooling ##
 
