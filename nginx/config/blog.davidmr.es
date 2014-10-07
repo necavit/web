@@ -17,6 +17,6 @@ server {
 	server_name blog.davidmr.es; #(sub)domain
 	
 	location / { #redirection
-		proxy_pass http://blog.davidmr.es #upstream defined
+		proxy_pass http://blog.davidmr.es; #upstream defined
 	}
 }

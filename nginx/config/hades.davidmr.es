@@ -3,20 +3,20 @@
 ##   node.js server, reverse-proxied through    ##
 ##   an nginx server                            ##
 ## author: necavit                              ##
-## date: 24, May, 2014                          ##
+## date: 9, July, 2014                          ##
 ## ******************************************** ##
 
 # IP address and port to listen to
-upstream davidmr.es {
-    server 188.226.214.223:8080;
+upstream hades.davidmr.es {
+    server 188.226.214.223:5000;
 }
 
 # nginx server configuration
 server {
 	listen 80; #listen on the 80 port
-	server_name *.davidmr.es davidmr.es; #(sub)domain
+	server_name hades.davidmr.es; #(sub)domain
 	
 	location / { #redirection
-		proxy_pass http://davidmr.es; #upstream defined
+		proxy_pass http://hades.davidmr.es; #upstream defined
 	}
 }
