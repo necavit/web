@@ -1,0 +1,266 @@
+/******************************/
+/* ****      HTML5       **** */
+/******************************/
+header, footer, article, nav {
+  display: block;
+}
+
+/******************************/
+/* ****     GENERAL      **** */
+/******************************/
+body {
+  background: #cccccc;
+  font-family: "Segoe UI", Frutiger, 
+    "Frutiger Linotype", "Dejavu Sans", 
+    "Helvetica Neue", Arial, sans-serif;
+}
+
+.container_16 {
+  background: #fafafa;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  outline: 0;
+}
+
+a:hover, a:active, a:focus {
+  text-decoration: underline;
+}
+
+li {
+  margin: 0;
+}
+
+.rounded_5 {
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px; /* future proofing */
+  -khtml-border-radius: 5px; /* for old Konqueror browsers */
+}
+
+.fill_width_list {
+  width: 100%;
+  display: table;
+  table-layout: fixed;
+}
+
+.fill_width_list_item {
+  display: table-cell;
+  width: auto;
+  text-align: center;
+}
+
+.no_margin {
+  margin: 0;
+}
+
+/******************************/
+/* ****   CONSTRUCTION   **** */
+/******************************/
+#under_construction_container {
+  background: #e5e5e5;
+}
+
+.construction {
+  background: url(../img/stripe_clear.png) repeat;
+  border:1px solid #d6d92b;
+  margin: 10px;
+  padding: 10px 20px 10px 20px;
+  font-family: Consolas, monaco, monospace;
+  text-align: left;
+  color: black;
+  text-shadow: 0px 0px 5px white;
+  display: inline-block;
+}
+
+#under_construction_content {
+  display: inline;
+}
+
+.construction_button {
+  background: #f7e09e;
+  border:1px solid #cfb56d;
+  color: black;
+  float: right;
+  margin-top: 5px;
+}
+
+.construction_button:hover {
+  background: #F7CB9E;
+  cursor: pointer;
+}
+
+/******************************/
+/* ****    DARK BLOCK    **** */
+/******************************/
+.dark_block {
+  background: #808080;
+}
+
+/******************************/
+/* ****      HEADER      **** */
+/******************************/
+#header_title {
+  margin: 25px 0px 25px 20px;
+}
+
+#header_nav {
+  margin: 29px 0px 15px 0px;
+}
+
+/******************************/
+/* ****      RESUME      **** */
+/******************************/
+#resume {
+  padding: 25px 0px 25px 0px;
+  text-align: center;
+  color: #4d4d4d;
+  font-size: x-large;
+}
+
+/******************************/
+/* ****      BANNER      **** */
+/******************************/
+#banner_container {
+  clear: both;
+}
+
+#banner_chip {
+  background: #e5e5e5;
+  margin: 60px 0px 70px 0px;
+  padding: 10px;
+  overflow: hidden;
+}
+
+#banner_avatar {
+  max-width: 40%;
+  height: auto;
+  float: left;
+  margin: 0px 10px 0px 0px;
+}
+
+#banner_text {
+  display: block;
+  padding: 10px 0px 10px 0px;
+}
+
+#banner_text a {
+  text-decoration: underline;
+}
+
+#banner_text p {
+  margin-bottom: 7px;
+}
+
+/******************************/
+/* ****      QUOTE       **** */
+/******************************/
+.light_gray_container {
+  background: #e5e5e5;
+  clear: both;
+}
+
+#quote {
+  padding: 35px 0px 35px 0px;
+  text-align: center;
+}
+
+#quote * {
+  display: inline;
+}
+
+#quote_left {
+  margin-right: 5px;
+}
+
+#quote_right {
+  margin-left: 5px;
+}
+
+.quote_color {
+  color: #4d4d4d;
+}
+
+.quote_text {
+  font-size: xx-large;
+}
+
+/******************************/
+/* ****     CONTACT      **** */
+/******************************/
+#contact_bar {
+  padding: 30px 0px 30px 0px;
+}
+
+#linkedin_icon:hover {
+  text-shadow: 0px 0px 10px #4d4d4d;
+}
+
+#github_icon:hover {
+  text-shadow: 0px 0px 10px #4d4d4d;
+}
+
+#bitbucket_icon:hover {
+  text-shadow: 0px 0px 10px #4d4d4d;
+}
+
+#twitter_icon:hover {
+  text-shadow: 0px 0px 10px #4d4d4d;
+}
+
+/******************************/
+/* ****       BLOG       **** */
+/******************************/
+#blog_container {
+  background-image: url(../img/blog_container_bg.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 300px;
+  max-height: 720px;
+}
+
+#blog_content {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#blog_content a {
+  color: #eaeaea;
+}
+
+.article_container {
+  background-color: rgba(0,0,0,0.5);
+  padding: 20px 30px 20px 30px;
+}
+
+/******************************/
+/* ****      FOOTER      **** */
+/******************************/
+#footer_content {
+  padding: 30px 40px 40px 40px;
+  text-align: center;
+}
+
+#footer_content * {
+  display: inline;
+}
+
+#quote_explanation {
+  float: left;
+}
+
+#footer_nav {
+  float: right;
+}
+
+#copyright {
+  clear: both;
+}
+
+/******************************/
+/* ****                  **** */
+/******************************/
+
+
