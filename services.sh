@@ -18,11 +18,19 @@ function start_services {
 
     echo "Starting Ghost blogging engine server..."
     echo "> NODE_ENV=production forever start blog/ghost/index.js"
-    NODE_ENV=production forever start blog/ghost/index.js
+    NODE_ENV=production forever start blog.davidmr.es/ghost/index.js
 
-    echo "Starting custom node.js server..."
-    echo "> forever start server/index.js"
-    forever start server/index.js
+    echo "Starting davidmr.es in a custom node.js server..."
+    echo "> forever start davidmr.es/bin/davidmr_es"
+    forever start davidmr.es/bin/davidmr_es
+
+    echo "Starting hades.davidmr.es in a custom node.js server..."
+    echo "> forever start hades.davidmr.es/bin/hades_davidmr_es"
+    forever start hades.davidmr.es/bin/hades_davidmr_es
+    
+    echo "Starting ISSO comments engine server at comments.blog.davidmr.es..."
+    echo "> isso -c comments.davidmr.es/isso.conf run &"
+    isso -c comments.davidmr.es/isso.conf run &
 }
 
 function stop_services {
