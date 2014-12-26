@@ -5,27 +5,30 @@
   <div id="header_navigation_grid" class="grid_7">
     <nav id="header_nav">
       <ul class="fill_width_list no_margin">
-        <!--
+
         {% for page in site.pages %}
           {% if page.title %}
-          <a class="page-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+          <li class="fill_width_list_it">
+            <a class="page-link" href="{{ page.url | prepend: site.baseurl }}"><h4>{{ page.title }}</h4></a>
+          </li>
           {% endif %}
         {% endfor %}
-        -->
+        <!--
         <li class="fill_width_list_item">
           <a href="/"><h4>Home</h4></a>
         </li>
-        <!--
+
         <li class="fill_width_list_item">
           <a href="#"><h4>Portfolio</h4></a>
         </li>
-        -->
+
         <li class="fill_width_list_item">
           <a href="http://blog.davidmr.es" target="_blank"><h4>Blog</h4></a>
         </li>
         <li class="fill_width_list_item">
           <a href="mailto:davidmr.web@gmail.com"><h4>Contact</h4></a>
         </li>
+      º-->
       </ul>
     </nav>
   </div>
