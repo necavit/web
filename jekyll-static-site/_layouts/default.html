@@ -7,14 +7,27 @@
 
     {% include header.html %}
 
-    <div class="page-content">
-      <div class="wrapper">
+    <div class="main-content">
+      <div class="main-content-wrapper">
         {{ content }}
       </div>
     </div>
 
     {% include footer.html %}
 
+    <!-- Import jQuery -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <!-- Import Materialize JS -->
+    <script type="text/javascript" src="js/bin/materialize.min.js"></script>
+
+
+    <script type="text/javascript">
+      //Parallax enabling
+      $(document).ready(function(){
+        $('.parallax').parallax();
+        $(".button-collapse").sideNav();
+      });
+    </script>
   </body>
 
 </html>

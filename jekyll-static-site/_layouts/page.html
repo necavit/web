@@ -1,14 +1,27 @@
 ---
 layout: default
 ---
-<div class="post">
+<div class="page">
 
-  <header class="post-header">
-    <h1 class="post-title">{{ page.title }}</h1>
+  <header class="page-header">
+    {% if page.parallax_image %}
+      <div class="parallax-container">
+        <div class="parallax">
+          <img src="{{ page.parallax_image }}">
+        </div>
+      </div>
+    {% endif %}
+    <div class="container">
+      <h1 class="post-title">{{ page.title }}</h1>
+    </div>
   </header>
 
-  <article class="post-content">
+  <div class="page-content">
     {{ content }}
-  </article>
+  </div>
+
+  <div class="page-footer">
+    <!-- FOOOOTER -->
+  </div>
 
 </div>

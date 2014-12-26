@@ -1,35 +1,21 @@
-<header id="header_container" class="container_16 dark_block">
-  <div id="header_title_grid" class="grid_9">
-    <h2 id="header_title">David Martínez</h2>
-  </div>
-  <div id="header_navigation_grid" class="grid_7">
-    <nav id="header_nav">
-      <ul class="fill_width_list no_margin">
+<header>
+  <nav>
+    <div class="nav-wrapper">
+      <div class="container">
+        <a href="#" class="brand-logo">David Martínez</a>
+        <ul id="nav-mobile" class="right side-nav">
+          {% for page in site.pages %}
+            {% if page.title %}
+            <li><a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a></li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      </div>
 
-        {% for page in site.pages %}
-          {% if page.title %}
-          <li class="fill_width_list_it">
-            <a class="page-link" href="{{ page.url | prepend: site.baseurl }}"><h4>{{ page.title }}</h4></a>
-          </li>
-          {% endif %}
-        {% endfor %}
-        <!--
-        <li class="fill_width_list_item">
-          <a href="/"><h4>Home</h4></a>
-        </li>
-
-        <li class="fill_width_list_item">
-          <a href="#"><h4>Portfolio</h4></a>
-        </li>
-
-        <li class="fill_width_list_item">
-          <a href="http://blog.davidmr.es" target="_blank"><h4>Blog</h4></a>
-        </li>
-        <li class="fill_width_list_item">
-          <a href="mailto:davidmr.web@gmail.com"><h4>Contact</h4></a>
-        </li>
-      º-->
-      </ul>
-    </nav>
-  </div>
+      <!-- Mobile collapsing navbar -->
+      <a class="button-collapse" href="#" data-activates="nav-mobile">
+        <i class="mdi-navigation-menu"></i>
+      </a>
+    </div>
+  </nav>
 </header>
