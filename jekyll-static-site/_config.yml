@@ -17,6 +17,9 @@ plugins:     ./_plugins
 layouts:     ./_layouts
 data_source: ./_data
 collections: null
+sass:
+  sass_dir: _sass
+  style: compressed
 
 # Handling Reading
 safe:         false
@@ -54,7 +57,7 @@ host:    0.0.0.0  # host name (localhost)
 relative_permalinks: false
 
 # Outputting
-permalink:     date
+permalink:     "/:title" # Old: date
 paginate_path: /page:num
 timezone:      null
 
