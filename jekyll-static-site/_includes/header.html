@@ -2,12 +2,11 @@
   <nav>
     <div class="nav-wrapper">
       <div class="container">
-        <a href="#" class="brand-logo">David Martínez</a>
+        <a href="{{ site.url }}" class="brand-logo">David Martínez</a>
         <ul id="nav-mobile" class="right side-nav">
-          {% for page in site.pages %}
-            {% if page.title %}
-            <li><a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a></li>
-            {% endif %}
+          {% assign sorted_pages = site.pages | sort:"name" %}
+          {% for node in sorted_pages %}
+            <li><a href="{{ node.url | prepend: site.baseurl }}">{{ node.title }}</a></li>
           {% endfor %}
         </ul>
       </div>

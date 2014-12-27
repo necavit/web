@@ -3,25 +3,57 @@ layout: default
 ---
 <div class="page">
 
-  <header class="page-header">
-    {% if page.parallax_image %}
-      <div class="parallax-container">
-        <div class="parallax">
-          <img src="{{ page.parallax_image }}">
+  <div class="page-header">
+    {% if page.parallax_header_image %}
+      <div class="parallax-wrapper">
+        <div class="parallax-container">
+          <div class="parallax">
+            <img src="/img/{{ page.parallax_header_image }}">
+          </div>
+        </div>
+        <div class="container">
+          <h1 class="page-parallax-title">
+            {% if page.page_title %}
+              {{ page.page_title }}
+            {% else %}
+              {{ page.title }}
+            {% endif %}
+          </h1>
         </div>
       </div>
     {% endif %}
-    <div class="container">
-      <h1 class="post-title">{{ page.title }}</h1>
+    <div class="no-parallax-wrapper">
+      <div class="container">
+        <h1>
+          {% if page.page_title %}
+            {{ page.page_title }}
+          {% else %}
+            {{ page.title }}
+          {% endif %}
+        </h1>
+      </div>
     </div>
-  </header>
+  </div>
 
   <div class="page-content">
-    {{ content }}
+    <div class="container">
+      {{ content }}
+    </div>
   </div>
 
   <div class="page-footer">
-    <!-- FOOOOTER -->
+    {% if page.parallax_footer_image %}
+      <div class="parallax-wrapper">
+        <div class="parallax-container">
+          <div class="parallax">
+            <img src="/img/{{ page.parallax_footer_image }}">
+          </div>
+        </div>
+      </div>
+    {% endif %}
+    <div class="no-parallax-wrapper">
+      <!-- nothing here yet -->
+    </div>
   </div>
 
 </div>
