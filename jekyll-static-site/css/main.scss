@@ -8,6 +8,16 @@
   "materialize"
 ;
 
+.card {
+  span.card-title-2 {
+    // Original Materialize framework defines the card title
+    //  to be: font-size: 24px;
+    @extend .card-title;
+    font-size: 20px;
+    text-transform: uppercase;
+  }
+}
+
 .parallax-wrapper {
   @extend .hide-on-med-and-down;
 }
@@ -38,10 +48,13 @@ footer {
   padding: 20px 0px 20px 0px;
 }
 
+$contant-icon-transition-duration: .3s;
 .contact-icon {
-  max-width: 40%;
-}
+  @include transition($contant-icon-transition-duration);
+  max-width: 30%;
 
-.contact-icon:hover {
-  opacity: 0.6;
+  &:hover {
+    @include transition($contant-icon-transition-duration);
+    opacity: 0.6;
+  }
 }
