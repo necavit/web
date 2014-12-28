@@ -1,6 +1,6 @@
 (function($) {
   $.fn.extend({
-    openModal: function(options) {
+    openEnhancedModal: function(options) {
       var modal = this;
       var overlay = $('<div id="lean-overlay"></div>');
       $("body").append(overlay);
@@ -10,15 +10,18 @@
         in_duration: 300,
         out_duration: 200,
         ready: undefined,
-        complete: undefined
+        complete: undefined,
+        dismissable: true
       }
 
       // Override defaults
       options = $.extend(defaults, options);
 
-      $("#lean-overlay").click(function() {
-        $(modal).closeModal(options);
-      });
+      if (options.dismissable) {
+        $("#lean-overlay").click(function() {
+          $(modal).closeModal(options);
+        });
+      }
 
       $(modal).find(".modal-close").click(function(e) {
         e.preventDefault();
@@ -50,7 +53,7 @@
   });
 
   $.fn.extend({
-    closeModal: function(options) {
+    closeEnhancedModal: function(options) {
       var defaults = {
         out_duration: 200,
         complete: undefined
@@ -71,7 +74,7 @@
   })
 
   $.fn.extend({
-    leanModal: function(options) {
+    leanEnhancedModal: function(options) {
       return this.each(function() {
         // Close Handlers
         $(this).click(function(e) {
