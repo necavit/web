@@ -15,11 +15,18 @@
 
     {% include footer.html %}
 
+    {% include modal-cookie-policy.html %}
+
     <!-- Import jQuery -->
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <!-- Import Materialize JS -->
     <script type="text/javascript" src="/js/bin/materialize.min.js"></script>
-
+    <!-- Import custom Materialize modal with support for undismissable modals -->
+    <script type="text/javascript" src="/js/leanModal.js"></script>
+    <!-- Import Cookie JS -->
+    <script type="text/javascript" src="/js/cookie/jquery.cookie.js"></script>
+    <!-- Import custom cookie manager -->
+    <script type="text/javascript" src="/js/cookie/cookie.mgr.js"></script>
 
     <script type="text/javascript">
       $(document).ready(function(){
@@ -27,6 +34,9 @@
         $('.parallax').parallax();
         //Side bar navbar when on small devices
         $(".button-collapse").sideNav();
+
+        //cookie and analytics management
+        checkCookiePolicy();
       });
     </script>
   </body>
