@@ -1,0 +1,9 @@
+footer {
+  @extend .z-depth-1;
+  background-color: color($theme-color, "base");
+  margin-top: 0px;
+
+  .footer-copyright {
+    background-color: color($theme-color, "darken-1");
+  }
+}

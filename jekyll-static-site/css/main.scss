@@ -1,60 +1,12 @@
 ---
 # Only the main Sass file needs front matter (the dashes are enough)
 ---
+
+// Charset
 @charset "utf-8";
 
 // Import partials from `sass_dir` (defaults to `_sass`)
-@import
-  "materialize"
-;
 
-.card {
-  span.card-title-2 {
-    // Original Materialize framework defines the card title
-    //  to be: font-size: 24px;
-    @extend .card-title;
-    font-size: 20px;
-    text-transform: uppercase;
-  }
-}
+@import "materialize/materialize"; // Materialize base framework
 
-.parallax-wrapper {
-  @extend .hide-on-med-and-down;
-}
-
-.no-parallax-wrapper {
-  @extend .hide-on-large-only;
-}
-
-.parallax-container {
-  height: 350px;
-}
-
-footer {
-  @extend .z-depth-1;
-  margin-top: 0px;
-}
-
-.page-header {
-  position: relative;
-}
-
-.page-parallax-title {
-  position: absolute;
-  bottom: 0px;
-}
-
-.page-content {
-  padding: 20px 0px 20px 0px;
-}
-
-$contant-icon-transition-duration: .3s;
-.contact-icon {
-  @include transition($contant-icon-transition-duration);
-  max-width: 30%;
-
-  &:hover {
-    @include transition($contant-icon-transition-duration);
-    opacity: 0.6;
-  }
-}
+@import "custom-style/dmr"; // Custom styles (extensions & modifications of Materialize)

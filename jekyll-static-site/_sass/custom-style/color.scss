@@ -1,0 +1,8 @@
+// Typography and layout generic colors
+
+$theme-color: "red";
+$theme-text-color: "red";
+
+.theme-color {
+	@extend .red;
+}

@@ -1,0 +1,29 @@
+.card {
+
+  .card-image {
+    img {
+      z-index: 0;
+    }
+  }
+
+  background-color: white;
+
+  a {
+    span.card-title {
+      text-transform: none;
+    }
+  }
+
+  span.card-title {
+    color: color($theme-text-color, "accent-4");
+  }
+
+  span.card-title-2 {
+    // Original Materialize framework defines the card title
+    //  to be: font-size: 24px;
+    @extend .card-title;
+    color: color($theme-text-color, "accent-2");
+    font-size: 20px;
+    text-transform: uppercase;
+  }
+}

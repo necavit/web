@@ -1,0 +1,10 @@
+$contant-icon-transition-duration: .3s;
+.contact-icon {
+  @include transition($contant-icon-transition-duration);
+  max-width: 40%;
+
+  &:hover {
+    @include transition($contant-icon-transition-duration);
+    opacity: 0.6;
+  }
+}

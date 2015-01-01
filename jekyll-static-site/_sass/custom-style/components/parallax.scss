@@ -1,0 +1,11 @@
+.parallax-wrapper {
+  @extend .hide-on-med-and-down;
+}
+
+.no-parallax-wrapper {
+  @extend .hide-on-large-only;
+}
+
+.parallax-container {
+  height: 350px;
+}
