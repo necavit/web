@@ -31,10 +31,10 @@ function rejectCookiePolicy() {
 
 function initCookiePolicyModal() {
 	$('#cookie-policy-modal-accept').click(function() {
-		acceptCookiePolicy();
+		//TODO acceptCookiePolicy();
 	});
 	$('#cookie-policy-modal-reject').click(function() {
-		rejectCookiePolicy();
+		//TODO rejectCookiePolicy();
 	});
 }
 
