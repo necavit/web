@@ -7,11 +7,13 @@
 
     {% include header.html %}
 
-    <div class="main-content">
-      <div class="main-content-wrapper">
-        {{ content }}
+    <main>
+      <div class="main-content">
+        <div class="main-content-wrapper">
+          {{ content }}
+        </div>
       </div>
-    </div>
+    </main>
 
     {% include footer.html %}
 
@@ -33,7 +35,9 @@
         //Parallax enabling
         $('.parallax').parallax();
         //Side bar navbar when on small devices
-        $(".button-collapse").sideNav();
+        $('.button-collapse').sideNav();
+        //Ellipsize overflowing text
+        $('.ellipsis').dotdotdot();
 
         //execute cookie and analytics management
         checkCookiePolicy();
