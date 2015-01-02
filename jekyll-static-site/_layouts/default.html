@@ -22,13 +22,17 @@
     <!-- Import jQuery -->
     <script type="text/javascript" src="/js/jquery/jquery-2.1.3.min.js"></script>
     <!-- Import Materialize JS -->
-    <script type="text/javascript" src="/js/bin/materialize.min.js"></script>
+    <script type="text/javascript" src="/js/materialize/bin/materialize.min.js"></script>
     <!-- Import custom Materialize modal with support for undismissable modals -->
-    <script type="text/javascript" src="/js/leanModal.js"></script>
+    <script type="text/javascript" src="/js/materialize/leanModal.js"></script>
     <!-- Import Cookie JS -->
     <script type="text/javascript" src="/js/cookie/jquery.cookie.js"></script>
     <!-- Import custom cookie manager -->
     <script type="text/javascript" src="/js/cookie/ck-ga.mgr.js"></script>
+    <!-- Import Prism.js syntax highlighter -->
+    <script type="text/javascript" src="/js/prism/prism.js"></script>
+    <!-- Import custom Prism.js beautifier -->
+    <script type="text/javascript" src="/js/prismatic/prismatic.js"></script>
 
     <script type="text/javascript">
       $(document).ready(function(){
@@ -36,8 +40,10 @@
         $('.parallax').parallax();
         //Side bar navbar when on small devices
         $('.button-collapse').sideNav();
-        //Ellipsize overflowing text
-        $('.ellipsis').dotdotdot();
+        //Material boxed images will open in a modal
+        $('.materialboxed').materialbox();
+        //Prismatic custom plugin
+        $('.highlight').prismatic();
 
         //execute cookie and analytics management
         checkCookiePolicy();
