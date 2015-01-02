@@ -1,3 +1,8 @@
+nav {
+	@extend nav;
+	background-color: color($theme-color, "base");
+}
+
 footer {
   @extend .z-depth-1;
   background-color: color($theme-color, "base");
@@ -6,4 +11,8 @@ footer {
   .footer-copyright {
     background-color: color($theme-color, "darken-1");
   }
+}
+
+a {
+	color: color($theme-text-color, "accent-4");
 }

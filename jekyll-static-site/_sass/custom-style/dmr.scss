@@ -1,10 +1,11 @@
 // Import files and partials (such modular, woo! =D)
 
 @import "color";
+@import "generics";
 @import "page";
+@import "post";
+
 @import "components/activator";
 @import "components/card";
 @import "components/contact-icon";
-@import "components/footer";
-@import "components/nav";
 @import "components/parallax";
