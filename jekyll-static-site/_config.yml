@@ -41,8 +41,8 @@ whitelist: []
 gems:      []
 
 # Conversion
-markdown:    kramdown
-highlighter: pygments
+markdown:    redcarpet
+highlighter: ""
 lsi:         false
 excerpt_separator: "\n\n"
 
@@ -86,12 +86,14 @@ redcarpet:
   extensions: []
 
 kramdown:
-  auto_ids:      true
-  footnote_nr:   1
-  entity_output: as_char
-  toc_levels:    1..6
-  smart_quotes:  lsquo,rsquo,ldquo,rdquo
-  use_coderay:   false
+  auto_ids:           true
+  footnote_nr:        1
+  entity_output:      as_char
+  toc_levels:         1..6
+  smart_quotes:       lsquo,rsquo,ldquo,rdquo
+  use_coderay:        false
+  input:              GFM
+  fenced_code_blocks: true
 
   coderay:
     coderay_wrap:              div
