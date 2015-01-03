@@ -4,7 +4,7 @@
       <div class="container">
         <a href="{{ site.url }}" class="brand-logo">David Martínez</a>
         <ul id="nav-mobile" class="right side-nav">
-          {% assign sorted_pages = site.pages | sort:"name" %}
+          {% assign sorted_pages = site.pages | sort:"position" %}
           {% for node in sorted_pages %}
             <li><a href="{{ node.url | prepend: site.baseurl }}">{{ node.title }}</a></li>
           {% endfor %}
