@@ -1,12 +1,12 @@
 .card {
 
+  background-color: white;
+
   .card-image {
     img {
       z-index: 0;
     }
   }
-
-  background-color: white;
 
   a {
     span.card-title {
@@ -25,5 +25,9 @@
     color: color($theme-text-color, "accent-2");
     font-size: 20px;
     text-transform: uppercase;
+  }
+
+  .card-reveal {
+    width: 100%;
   }
 }

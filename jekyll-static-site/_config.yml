@@ -16,7 +16,8 @@ destination: ./_site
 plugins:     ./_plugins
 layouts:     ./_layouts
 data_source: ./_data
-collections: null
+collections:
+  - thoughts
 sass:
   sass_dir: _sass
   style: compressed
