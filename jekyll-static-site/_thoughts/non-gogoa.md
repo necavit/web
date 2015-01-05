@@ -9,8 +9,8 @@ type: "panel"
 
 #### Optional attributes ####
 # {panel} applicable
-back-color: "red accent-2"
-text-color: "red-text lighten-5"
+back-color: "theme-color accent-2"
+text-color: "theme-text-color lighten-5"
 ---
 
 ###### **Non gogoa han zangoa.**

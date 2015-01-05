@@ -10,7 +10,6 @@ type: "reveal"
 #### Optional attributes ####
 # {simple, image, reveal} applicable
 title: "Avatar"
-#title-color: "white-text"
 
 # {image, reveal} applicable
 image: "/img/avatar_400.png"
