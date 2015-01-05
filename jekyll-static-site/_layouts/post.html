@@ -8,15 +8,29 @@ layout: default
       <div class=" col s12 l10 offset-l1">
         <article>
           <h1 class="post-title">{{ page.title }}</h1>
-          <p class="post-meta">
-            {{ page.date | date: "%b %-d, %Y" }}
-            {% if page.author %} • {{ page.author }}{% endif %}
-            {% if page.meta %} • {{ page.meta }}{% endif %}
-          </p>
+          <div class="post-meta">
+            <p>
+              <i class="mdi-maps-place"></i> {{ page.date | date: "%b %-d, %Y" }}
+            </p>
+            {% if page.tags.size > 0 %}
+            <p>
+              <i class="mdi-maps-local-offer"></i> {{ page.tags | array_to_sentence_string }}
+            </p>
+            {% endif %}
+          </div>
           <div class="post-content">
             {{ content }}
           </div>
         </article>
+        {% if page.comments %}
+          <div class="disqus-comments-container">
+            <!-- Disqus comments will be layed out here, if cookie policy
+                  is accepted by the user. Otherwise, no comments will be shown
+                  and no cookies will be installed.
+                 This 'div' tag is needed, because the jQuery plugin used to manage
+                  cookies uses it to insert the appropriate Disqus code herein. -->
+          </div>
+        {% endif %}
       </div>
     </div>
   </div>
