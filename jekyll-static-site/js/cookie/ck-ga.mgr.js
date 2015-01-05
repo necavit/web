@@ -13,7 +13,7 @@ function clearCookies() {
 }
 
 function setCookiePolicyCookie(value) {
-	$.cookie(POLICY_ACCEPT_COOKIE_NAME, value, {expires: EXPIRATION_VALUE});
+	$.cookie(POLICY_ACCEPT_COOKIE_NAME, value, {expires: EXPIRATION_VALUE, path: '/'});
 }
 
 function acceptCookiePolicy() {
