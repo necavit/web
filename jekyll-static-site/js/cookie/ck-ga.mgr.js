@@ -20,6 +20,7 @@ function acceptCookiePolicy() {
 	console.log('Cookie policy accepted.');
 	setCookiePolicyCookie('true');
 	enableAnalytics();
+	addDisqusComments();
 }
 
 function rejectCookiePolicy() {
@@ -31,10 +32,10 @@ function rejectCookiePolicy() {
 
 function initCookiePolicyModal() {
 	$('#cookie-policy-modal-accept').click(function() {
-		//TODO acceptCookiePolicy();
+		acceptCookiePolicy();
 	});
 	$('#cookie-policy-modal-reject').click(function() {
-		//TODO rejectCookiePolicy();
+		rejectCookiePolicy();
 	});
 }
 
@@ -47,6 +48,7 @@ function checkCookiePolicy() {
 		console.log('Cookie policy set with value: ' + acceptCookies);
 		if (acceptCookies) {
 			enableAnalytics();
+			addDisqusComments();
 		}
 		else {
 			disableAnalytics();
@@ -59,6 +61,20 @@ function checkCookiePolicy() {
 		});
 	}
 }
+
+/* **** **** **** **** **** **** **** **** **** **** **** */
+/*     DISQUS COMMENTS                                    */
+/* **** **** **** **** **** **** **** **** **** **** **** */
+
+function addDisqusComments() {
+	console.log('Enabling Disqus comments.');
+	var disqusContainer = $('.disqus-comments-container');
+	var disqusEngineScript = $("<script src='/js/disqus/disqus.js'></script>");
+	var disqusThread = $('<div id="disqus_thread"></div>');
+	disqusContainer.append(disqusThread);
+	disqusContainer.append(disqusEngineScript);
+}
+
 
 /* **** **** **** **** **** **** **** **** **** **** **** */
 /*     GOOGLE ANALYTICS                                   */
