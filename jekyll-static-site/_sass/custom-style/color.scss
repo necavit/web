@@ -6,3 +6,7 @@ $theme-text-color: "red";
 .theme-color {
 	@extend .red;
 }
+
+.theme-text-color {
+	@extend .red-text;
+}

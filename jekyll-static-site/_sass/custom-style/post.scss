@@ -8,94 +8,101 @@
 	article {
 		padding: 10px 20px 50px 20px;
 	}
-}
 
-.post-row {
-	margin-bottom: 0;
-}
-
-.post-title {
-	color: black;
-
-	@media #{$medium-and-up} {
-    margin-top: 100px;
-  }
-}
-
-.post-content {
-
-	li, p {
-		font-size: 18px;
-		font-weight: 300;
+	.post-row {
+		margin-bottom: 0;
 	}
 
-	li {
-		margin-left: 20px;
+	.post-title {
+		color: black;
+
+		@media #{$medium-and-up} {
+	    margin-top: 100px;
+	  }
 	}
 
-	ul {
-		li {
-			list-style-type: disc;
+	.post-meta {
+		color: color($theme-text-color, "accent-2");
+		p {
+			margin: 0;
 		}
 	}
 
-	ol {
-		counter-reset: item;
-		padding: 0;
+	.post-content {
+
+		li, p {
+			font-size: 18px;
+			font-weight: 300;
+		}
+
 		li {
-			&:before {
-				content: counters(item, ".") ". ";
-				counter-increment: item;
+			margin-left: 20px;
+		}
+
+		ul {
+			li {
+				list-style-type: disc;
 			}
 		}
-	}
 
-	a {
-		@include transition(0.2s);
+		ol {
+			counter-reset: item;
+			padding: 0;
+			li {
+				&:before {
+					content: counters(item, ".") ". ";
+					counter-increment: item;
+				}
+			}
+		}
 
-		&:hover {
+		a {
 			@include transition(0.2s);
-			color: color($theme-text-color, "accent-2");
+
+			&:hover {
+				@include transition(0.2s);
+				color: color($theme-text-color, "accent-2");
+			}
 		}
-	}
 
-	blockquote {
-		border-left: 5px solid color($theme-text-color, "accent-2");
+		blockquote {
+			border-left: 5px solid color($theme-text-color, "accent-2");
 
-		p {
-			font-size: 20px;
-			font-weight: 300;
-			color: color($theme-text-color, "darken-2");
+			p {
+				font-size: 20px;
+				font-weight: 300;
+				color: color($theme-text-color, "darken-2");
+			}
 		}
-	}
 
-	$h1-fontsize: 3.2rem;
-	h1 {
-		font-size: $h1-fontsize;
-	}
+		$h1-fontsize: 3.2rem;
+		h1 {
+			font-size: $h1-fontsize;
+		}
 
-	$h2-fontsize: 2.8rem;
-	h2 {
-		font-size: $h2-fontsize;
-	}
+		$h2-fontsize: 2.8rem;
+		h2 {
+			font-size: $h2-fontsize;
+		}
 
-	$h3-fontsize: 2.4rem;
-	h3 {
-		font-size: $h3-fontsize;
-	}
+		$h3-fontsize: 2.4rem;
+		h3 {
+			font-size: $h3-fontsize;
+		}
 
-	$h4-fontsize: 2rem;
-	h4 {
-		font-size: $h4-fontsize;
-	}
+		$h4-fontsize: 2rem;
+		h4 {
+			font-size: $h4-fontsize;
+		}
 
-	$h5-fontsize: 1.6rem;
-	h5 {
-		font-size: $h5-fontsize;
-	}
+		$h5-fontsize: 1.6rem;
+		h5 {
+			font-size: $h5-fontsize;
+		}
 
-	$h6-fontsize: 1.2rem;
-	h6 {
-		font-size: $h6-fontsize;
+		$h6-fontsize: 1.2rem;
+		h6 {
+			font-size: $h6-fontsize;
+		}
 	}
 }
