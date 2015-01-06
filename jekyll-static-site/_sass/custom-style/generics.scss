@@ -3,6 +3,10 @@ nav {
 	background-color: color($theme-color, "base");
 }
 
+header {
+	@extend .z-depth-1;
+}
+
 footer {
   @extend .z-depth-1;
   background-color: color($theme-color, "base");
@@ -10,7 +14,55 @@ footer {
 
   .footer-copyright {
     background-color: color($theme-color, "darken-1");
+		color: color("grey", "lighten-4");
   }
+
+	h5 {
+		font-size: 1.5rem;
+		line-height: 1.6rem;
+		padding: 0 0 0.5em 0;
+		margin: 0;
+		color: color("grey", "lighten-4");
+	}
+
+	.footer-links-container {
+		width: 50%;
+		float: right;
+	}
+
+	.footer-link {
+		.footer-icon {
+			height: 1.5em;
+			width: auto;
+			vertical-align: middle;
+			padding: 0 0.3em 0.5em 0;
+			fill: color("grey", "lighten-4");
+			@include transition(0.2s);
+		}
+
+		&:hover .footer-icon {
+			@include transition(0.2s);
+			fill: color($theme-text-color, "accent-4");
+		}
+		&:hover a {
+			@include transition(0.2s);
+			color: color($theme-text-color, "accent-4");
+		}
+	}
+
+	p {
+		margin: 0;
+		color: color("grey", "lighten-4");
+	}
+
+	a {
+		@include transition(0.2s);
+		color: color("grey", "lighten-5");
+		&:hover {
+			@include transition(0.2s);
+			color: color($theme-text-color, "accent-4");
+		}
+	}
 }
 
 a {

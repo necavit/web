@@ -7,7 +7,19 @@
   bottom: 0px;
 }
 
+.page-title-container-no-parallax {
+  background-color: color($theme-color, "lighten-4");
+  position: relative;
+  z-index: -1;
+
+  h1 {
+    margin: 0;
+    padding: 2.1rem 0 1.68rem;
+  }
+}
+
 .page-content {
   background-color: color($theme-text-color, "lighten-5");
   padding: 20px 0px 20px 0px;
+  @extend .z-depth-1;
 }
