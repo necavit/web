@@ -29,6 +29,10 @@
     <script type="text/javascript" src="/js/prism/prism.js"></script>
     <!-- Import custom Prism.js beautifier -->
     <script type="text/javascript" src="/js/prismatic/prismatic.js"></script>
+    <!-- Import custom SVG image inliner -->
+    <script type="text/javascript" src="/js/svginliner/svginliner.js"></script>
+    <!-- Import Masonry.js -->
+    <script type="text/javascript" src="/js/masonry/masonry.pkgd.min.js"></script>
 
     <script type="text/javascript">
       $(document).ready(function(){
@@ -38,8 +42,16 @@
         $('.button-collapse').sideNav();
         //Material boxed images will open in a modal
         $('.materialboxed').materialbox();
+        //Expandable elements
+        $('.collapsible-expandable').collapsible({ "accordion" : false });
         //Prismatic custom plugin
         $('.highlight').prismatic();
+        //Transform img tags to inline svg images
+        $('.inline-svg').inlineSvg();
+        $('.masonry-container').masonry({
+          columnWidth: '.masonry-item',
+          itemSelector: '.masonry-item'
+        });
 
         //execute cookie and analytics management
         checkCookiePolicy();

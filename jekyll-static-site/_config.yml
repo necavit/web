@@ -58,7 +58,7 @@ host:    0.0.0.0  # host name (localhost)
 relative_permalinks: false
 
 # Outputting
-permalink:     "/:title" # Old: date
+permalink:     /:title # Old: date
 paginate_path: /page:num
 timezone:      null
 

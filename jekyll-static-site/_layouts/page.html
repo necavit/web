@@ -21,18 +21,31 @@ layout: default
           </h1>
         </div>
       </div>
-    {% endif %}
-    <div class="no-parallax-wrapper">
-      <div class="container">
-        <h1>
-          {% if page.page_title %}
-            {{ page.page_title }}
-          {% else %}
-            {{ page.title }}
-          {% endif %}
-        </h1>
+      <div class="no-parallax-wrapper page-title-container-no-parallax">
+        <div class="container">
+          <h1>
+            {% if page.page_title %}
+              {{ page.page_title }}
+            {% else %}
+              {{ page.title }}
+            {% endif %}
+          </h1>
+        </div>
       </div>
-    </div>
+    {% else %}
+      <div class="page-title-container-no-parallax">
+        <div class="container">
+          <h1>
+            {% if page.page_title %}
+              {{ page.page_title }}
+            {% else %}
+              {{ page.title }}
+            {% endif %}
+          </h1>
+        </div>
+      </div>
+    {% endif %}
+
   </div>
 
   <div class="page-content">
