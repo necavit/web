@@ -1,0 +1,18 @@
+.page-about {
+	.elevator-pitch-card {
+		.card {
+			.card-content {
+				.row {
+					padding: inherit;
+					margin: 0;
+				}
+			}
+		}
+	}
+	.card {
+		a {
+			margin: 0;
+			text-transform: none;
+		}
+	}
+}
