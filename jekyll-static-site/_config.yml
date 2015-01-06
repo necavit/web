@@ -1,10 +1,9 @@
 # Site settings
 title: David Martínez Rodríguez
-email: my-email@my-domain.com
 description: > # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  Informatics engineer with a scientific heart. Triathlete, cyclist,
+  mountaineering lover. This is my blog, my site, a place to store some
+  thoughts and share some experiences.
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://davidmr.es" # the base hostname & protocol for your site
 twitter_username: nihilsinecaos
