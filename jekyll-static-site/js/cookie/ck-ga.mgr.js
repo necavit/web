@@ -18,6 +18,7 @@ function setCookiePolicyCookie(value) {
 
 function acceptCookiePolicy() {
 	console.log('Cookie policy accepted.');
+	clearCookies();
 	setCookiePolicyCookie('true');
 	enableAnalytics();
 	addDisqusComments();
@@ -39,26 +40,44 @@ function initCookiePolicyModal() {
 	});
 }
 
+function initPolicyAcceptanceButtons() {
+	$('#privacy-policy-button-accept').click(function(e) {
+		e.preventDefault();
+		acceptCookiePolicy();
+		location.href = $(this).prop("href");
+	});
+	$('#privacy-policy-button-reject').click(function(e) {
+		e.preventDefault();
+		rejectCookiePolicy();
+		location.href = $(this).prop("href");
+	});
+}
+
 function checkCookiePolicy() {
+	var noPolicyCheck = $('.no-policy-check');
+	if (noPolicyCheck.length == 0) {
+		initCookiePolicyModal();
 
-	initCookiePolicyModal();
-
-	var acceptCookies = $.cookie(POLICY_ACCEPT_COOKIE_NAME, JSON.parse);
-	if (typeof acceptCookies !== 'undefined') {
-		console.log('Cookie policy set with value: ' + acceptCookies);
-		if (acceptCookies) {
-			enableAnalytics();
-			addDisqusComments();
+		var acceptCookies = $.cookie(POLICY_ACCEPT_COOKIE_NAME, JSON.parse);
+		if (typeof acceptCookies !== 'undefined') {
+			console.log('Cookie policy set with value: ' + acceptCookies);
+			if (acceptCookies) {
+				enableAnalytics();
+				addDisqusComments();
+			}
+			else {
+				disableAnalytics();
+			}
 		}
 		else {
-			disableAnalytics();
+			console.log('Cookie policy not yet accepted. Prompting user for acceptance.');
+			$('#cookie-policy-modal').openEnhancedModal({
+				dismissable: false
+			});
 		}
 	}
 	else {
-		console.log('Cookie policy not yet accepted. Prompting user for acceptance.');
-		$('#cookie-policy-modal').openEnhancedModal({
-			dismissable: false
-		});
+		initPolicyAcceptanceButtons();
 	}
 }
 

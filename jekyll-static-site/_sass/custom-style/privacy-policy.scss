@@ -1,0 +1,41 @@
+.privacy-policy {
+	.card {
+		a {
+			@include transition(0.2s);
+			color: color($theme-text-color, "accent-4");
+			margin: 0;
+			text-transform: none;
+
+			&:hover {
+				@include transition(0.2s);
+				color: color($theme-text-color, "accent-2");
+			}
+		}
+
+		dl {
+			font-size: 0.9rem;
+			padding: 0.6em 0 0.6em 0;
+			margin: 0 2em;
+			border-top: 1px solid #ddd;
+		}
+
+		dt {
+			float: left;
+			clear: left;
+			width: 120px;
+			text-align: right;
+		}
+
+		dd {
+			margin: 0 0 0 130px;
+			padding: 0 0 0.5em 0;
+		}
+
+		.collapsible-expandable {
+			p {
+				padding: 1rem;
+			}
+		}
+
+	}
+}
