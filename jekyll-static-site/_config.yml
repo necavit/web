@@ -3,7 +3,7 @@ title: David Martínez Rodríguez
 description: > # this means to ignore newlines until "baseurl:"
   Informatics engineer with a scientific heart. Triathlete, cyclist,
   mountaineering lover. This is my blog, my site, a place to store some
-  thoughts and share some experiences.
+  thoughts and share experiences.
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://davidmr.es" # the base hostname & protocol for your site
 twitter_username: nihilsinecaos
