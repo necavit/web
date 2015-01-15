@@ -1,4 +1,0 @@
-#!/bin/bash
-
-nodemon bin/davidmr_es
-
