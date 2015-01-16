@@ -29,4 +29,3 @@ The nginx server is just an entry gate for all HTTP requests on the 80 port. It 
 
 * The [davidmr.es](http://davidmr.es) root domain, running on the 8080 port.
 * The [blog.davidmr.es](http://blog.davidmr.es) blog subdomain, running on the 2369 port.
-* The [hades.davidmr.es](http://hades.davidmr.es) server, running on the 5000 port.
