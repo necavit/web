@@ -33,6 +33,8 @@
     <script type="text/javascript" src="/js/svginliner/svginliner.js"></script>
     <!-- Import Masonry.js -->
     <script type="text/javascript" src="/js/masonry/masonry.pkgd.min.js"></script>
+    <!-- Import ImagesLoaded.js -->
+    <script type="text/javascript" src="/js/imagesLoaded/imagesloaded.pkgd.min.js"></script>
 
     <script type="text/javascript">
       $(document).ready(function(){
@@ -48,9 +50,13 @@
         $('.highlight').prismatic();
         //Transform img tags to inline svg images
         $('.inline-svg').inlineSvg();
-        $('.masonry-container').masonry({
-          columnWidth: '.masonry-item',
-          itemSelector: '.masonry-item'
+        //Use Masonry.js and ImagesLoaded.js to format the grids
+        var container = $('.masonry-container');
+        container.imagesLoaded(function(){
+          container.masonry({
+            columnWidth: '.masonry-item',
+            itemSelector: '.masonry-item'
+          });
         });
 
         //execute cookie and analytics management
